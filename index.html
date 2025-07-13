@@ -1,0 +1,2366 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Nature Conservancy - Protecting nature and preserving life through science, conservation, and community engagement worldwide.">
+    <meta name="keywords" content="nature conservation, environmental protection, wildlife preservation, climate change, donate to nature">
+    <title>The Nature Conservancy | Protecting Nature for Future Generations</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-green: #007A33;
+            --secondary-green: #5B8A3D;
+            --light-green: #E6F2E9;
+            --dark-green: #004C26;
+            --accent-orange: #FF6B35;
+            --white: #FFFFFF;
+            --black: #222222;
+            --gray: #F5F5F5;
+            --dark-gray: #777777;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', Arial, sans-serif;
+        }
+        
+        body {
+            color: var(--black);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-green);
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--accent-orange);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary-green);
+            color: var(--white);
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        
+        .btn:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary-green);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent-orange);
+        }
+        
+        .btn-accent:hover {
+            background-color: #e05a2b;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .section-padding {
+            padding: 100px 0;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        header.sticky {
+            padding: 5px 0;
+            background-color: rgba(255,255,255,0.98);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        header.sticky .logo {
+            height: 40px;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            height: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: var(--black);
+            font-weight: 600;
+            padding: 5px 0;
+            font-size: 0.95rem;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-green);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-green);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--primary-green);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1476231682828-37e571bc172f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 80px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Stats Counter */
+        .stats {
+            background-color: var(--dark-green);
+            color: var(--white);
+            padding: 50px 0;
+            position: relative;
+            z-index: 1;
+            margin-top: -50px;
+        }
+        
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--accent-orange);
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Mission Section */
+        .mission {
+            padding: 100px 0;
+            background-color: var(--light-green);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mission::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: url('https://www.nature.org/content/dam/tnc/nature/en/patterns/leaf-pattern.png');
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary-green);
+            position: relative;
+            font-size: 2.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-orange);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            color: var(--dark-gray);
+            font-size: 1.1rem;
+        }
+        
+        .mission-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .mission-text {
+            flex: 1;
+        }
+        
+        .mission-text p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+        
+        .mission-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .mission-image:hover {
+            transform: scale(1.02);
+        }
+        
+        .mission-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Impact Section */
+        .impact {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+        
+        .impact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .impact-card {
+            background-color: var(--light-green);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .impact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .impact-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .impact-card-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .impact-card h3 {
+            color: var(--primary-green);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .impact-card p {
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        /* Programs Section */
+        .programs {
+            padding: 100px 0;
+            background-color: var(--gray);
+        }
+        
+        .program-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            padding: 12px 25px;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            font-weight: 600;
+            color: var(--dark-gray);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .tab-btn.active {
+            color: var(--primary-green);
+            border-bottom: 3px solid var(--accent-orange);
+        }
+        
+        .tab-btn:hover:not(.active) {
+            color: var(--black);
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .program-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .program-text {
+            flex: 1;
+        }
+        
+        .program-text h3 {
+            color: var(--primary-green);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .program-text p {
+            margin-bottom: 20px;
+        }
+        
+        .program-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .program-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* News/Blog Section */
+        .news {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+        
+        .news-articles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .article-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .article-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .article-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .article-date {
+            color: var(--accent-orange);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .article-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            line-height: 1.4;
+        }
+        
+        .article-card p {
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        
+        .article-tag {
+            background-color: var(--light-green);
+            color: var(--primary-green);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+        
+        /* Article Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 40px 20px;
+        }
+        
+        .modal-content {
+            background-color: var(--white);
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: modalFadeIn 0.4s ease;
+        }
+        
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .modal-header {
+            position: relative;
+        }
+        
+        .modal-header img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(0,0,0,0.7);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .close-modal:hover {
+            background-color: var(--accent-orange);
+            transform: rotate(90deg);
+        }
+        
+        .modal-body {
+            padding: 40px;
+        }
+        
+        .modal-date {
+            color: var(--accent-orange);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .modal-title {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--primary-green);
+            line-height: 1.3;
+        }
+        
+        .modal-text {
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        .modal-text p {
+            margin-bottom: 20px;
+        }
+        
+        .modal-image {
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .modal-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        .modal-image figcaption {
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+            margin-top: 10px;
+        }
+        
+        .modal-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: var(--light-green);
+        }
+        
+        .modal-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .modal-social {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .modal-social a {
+            color: var(--primary-green);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-social a:hover {
+            color: var(--accent-orange);
+            transform: translateY(-3px);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background-color: var(--light-green);
+        }
+        
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 50px auto 0;
+            position: relative;
+        }
+        
+        .testimonial {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            display: none;
+        }
+        
+        .testimonial.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .testimonial-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--dark-gray);
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .testimonial-text::before,
+        .testimonial-text::after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--accent-orange);
+            opacity: 0.3;
+            position: absolute;
+        }
+        
+        .testimonial-text::before {
+            top: -20px;
+            left: -10px;
+        }
+        
+        .testimonial-text::after {
+            bottom: -40px;
+            right: -10px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-orange);
+        }
+        
+        .author-info h4 {
+            color: var(--primary-green);
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+        
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+        
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--secondary-green);
+            opacity: 0.3;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-dot.active {
+            opacity: 1;
+            background-color: var(--accent-orange);
+            transform: scale(1.2);
+        }
+        
+        /* Partners Section */
+        .partners {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .partner-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .partner-logo {
+            max-width: 180px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .partner-logo:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+        
+        /* Donation CTA */
+        .donation-cta {
+            padding: 100px 0;
+            background: linear-gradient(rgba(0,122,51,0.9), rgba(0,122,51,0.9)), url('https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            text-align: center;
+            position: relative;
+        }
+        
+        .donation-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .donation-cta .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .donation-cta h2 {
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+        
+        .donation-cta p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+        }
+        
+        .donation-options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .donation-option {
+            background-color: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 15px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .donation-option:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        .donation-option.active {
+            background-color: var(--accent-orange);
+            border-color: var(--accent-orange);
+        }
+        
+        /* Newsletter Section */
+        .newsletter {
+            padding: 80px 0;
+            background-color: var(--secondary-green);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .newsletter-form {
+            max-width: 600px;
+            margin: 30px auto 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            min-width: 250px;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .newsletter-form button {
+            padding: 15px 30px;
+            background-color: var(--accent-orange);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: #e05a2b;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-green);
+            color: var(--white);
+            padding: 80px 0 20px;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-orange);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-column ul li a {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--white);
+            transform: translateX(5px);
+        }
+        
+        .footer-column p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .social-links a:hover {
+            color: var(--white);
+            background-color: var(--accent-orange);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-bottom a {
+            color: rgba(255,255,255,0.9);
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent-orange);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border: none;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--primary-green);
+            transform: translateY(-5px);
+        }
+        
+        /* About Page Styles */
+        .page-header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            margin-bottom: 60px;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .breadcrumb a {
+            color: var(--white);
+            opacity: 0.8;
+        }
+        
+        .breadcrumb a:hover {
+            opacity: 1;
+        }
+        
+        .breadcrumb span {
+            color: var(--white);
+            margin: 0 10px;
+            opacity: 0.8;
+        }
+        
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto 80px;
+        }
+        
+        .about-content h2 {
+            color: var(--primary-green);
+            margin: 40px 0 20px;
+        }
+        
+        .about-content p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .team-section {
+            background-color: var(--light-green);
+            padding: 80px 0;
+            margin: 80px 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .team-member {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .team-member img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .team-info {
+            padding: 25px;
+        }
+        
+        .team-info h3 {
+            color: var(--primary-green);
+            margin-bottom: 5px;
+        }
+        
+        .team-info p {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .team-social a {
+            color: var(--primary-green);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .team-social a:hover {
+            color: var(--accent-orange);
+        }
+        
+        /* History Timeline */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto 80px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: var(--secondary-green);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+            display: flex;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            justify-content: flex-end;
+            padding-right: 50px;
+        }
+        
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-left: 50px;
+        }
+        
+        .timeline-content {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            width: calc(50% - 30px);
+            position: relative;
+        }
+        
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--accent-orange);
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            left: -60px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::before {
+            right: -60px;
+        }
+        
+        .timeline-year {
+            color: var(--accent-orange);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-title {
+            color: var(--primary-green);
+            margin-bottom: 15px;
+        }
+        
+        /* Privacy Policy Page */
+        .privacy-content {
+            max-width: 900px;
+            margin: 0 auto 80px;
+        }
+        
+        .privacy-content h2 {
+            color: var(--primary-green);
+            margin: 40px 0 20px;
+        }
+        
+        .privacy-content h3 {
+            color: var(--dark-green);
+            margin: 30px 0 15px;
+            font-size: 1.3rem;
+        }
+        
+        .privacy-content p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .privacy-content ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        
+        .privacy-content ul li {
+            margin-bottom: 10px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .mission-content, .program-content {
+                flex-direction: column;
+            }
+            
+            .mission-text, .mission-image, .program-text, .program-image {
+                flex: none;
+                width: 100%;
+            }
+            
+            .program-image {
+                order: -1;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                justify-content: flex-start;
+                padding-left: 80px;
+                padding-right: 0;
+            }
+            
+            .timeline-content {
+                width: 100%;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content::before,
+            .timeline-item:nth-child(even) .timeline-content::before {
+                left: -50px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--white);
+                transition: all 0.3s ease;
+                padding: 30px;
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .donation-cta h2 {
+                font-size: 2rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                height: 80vh;
+                min-height: 500px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-padding {
+                padding: 70px 0;
+            }
+            
+            .donation-options {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="mainHeader">
+        <div class="container header-container">
+            <a href="index.html">
+                <img src="https://www.nature.org/content/dam/tnc/nature/en/logos/TNC_Logo_Green.svg" alt="The Nature Conservancy Logo" class="logo">
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="work.html">Our Work</a></li>
+                    <li><a href="stories.html">Stories</a></li>
+                    <li><a href="get-involved.html">Get Involved</a></li>
+                    <li><a href="donate.html" class="btn btn-accent" style="color: white;">Donate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Protecting Nature. Preserving Life.</h1>
+                <p>Together, we can create a world where people and nature thrive. Join us in conserving the lands and waters on which all life depends.</p>
+                <div class="hero-btns">
+                    <a href="get-involved.html" class="btn btn-outline">Take Action</a>
+                    <a href="donate.html" class="btn">Donate Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Counter -->
+    <section class="stats">
+        <div class="container stats-container">
+            <div class="stat-item">
+                <div class="stat-number" id="landCounter">0</div>
+                <div class="stat-label">Acres Protected</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="riverCounter">0</div>
+                <div class="stat-label">Miles of Rivers</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="countryCounter">0</div>
+                <div class="stat-label">Countries</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="memberCounter">0</div>
+                <div class="stat-label">Members</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission section-padding">
+        <div class="container">
+            <h2 class="section-title">Our Mission</h2>
+            <p class="section-subtitle">We're a global environmental nonprofit working to create a world where people and nature can thrive together.</p>
+            <div class="mission-content">
+                <div class="mission-text">
+                    <p>Founded in 1951 through grassroots action in the United States, The Nature Conservancy has grown to become one of the most effective and wide-reaching environmental organizations in the world. Our mission is to conserve the lands and waters on which all life depends.</p>
+                    <p>We tackle the most pressing conservation challenges of our time: climate change, protecting lands and waters, providing food and water sustainably, and building healthy cities. Our approach is science-based and collaborative, working with local communities, governments, the private sector, and other partners to develop innovative, sustainable solutions.</p>
+                    <p>With operations in 79 countries and territories, we employ more than 400 scientists and have protected more than 125 million acres of land and thousands of miles of rivers worldwide.</p>
+                    <a href="about.html" class="btn">Learn More About Us</a>
+                </div>
+                <div class="mission-image">
+                    <img src="https://images.unsplash.com/photo-1469827160215-9d29e96e72f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Nature conservation">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs section-padding">
+        <div class="container">
+            <h2 class="section-title">Our Programs</h2>
+            <p class="section-subtitle">We address critical conservation challenges through focused initiatives that deliver measurable results.</p>
+            
+            <div class="program-tabs">
+                <button class="tab-btn active" data-tab="climate">Climate Change</button>
+                <button class="tab-btn" data-tab="land">Land Conservation</button>
+                <button class="tab-btn" data-tab="water">Water Protection</button>
+                <button class="tab-btn" data-tab="cities">Sustainable Cities</button>
+            </div>
+            
+            <div class="tab-content active" id="climate">
+                <div class="program-content">
+                    <div class="program-text">
+                        <h3>Addressing the Climate Crisis</h3>
+                        <p>Climate change is the single biggest threat to our planet. We're working to reduce greenhouse gas emissions and help nature adapt to climate impacts through natural climate solutions.</p>
+                        <p>Our approach focuses on protecting and restoring forests, improving agricultural practices, and conserving coastal wetlands—all of which can absorb and store significant amounts of carbon.</p>
+                        <p>We also work with governments and businesses to implement policies and practices that reduce emissions and transition to clean energy.</p>
+                        <a href="climate-program.html" class="btn">Learn About Our Climate Work</a>
+                    </div>
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1615796153287-98eacf0abb13?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Climate change program">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="land">
+                <div class="program-content">
+                    <div class="program-text">
+                        <h3>Protecting Vital Lands</h3>
+                        <p>From forests to grasslands, we work to protect the most important lands for nature and people. Our science helps identify priority areas that provide critical habitat for wildlife while also delivering clean air, water, and other benefits to people.</p>
+                        <p>We use a variety of conservation tools including land purchases, conservation easements, and partnerships with indigenous communities and local landowners.</p>
+                        <p>To date, we've protected more than 125 million acres around the world, including iconic landscapes like the Amazon rainforest and the American West.</p>
+                        <a href="land-program.html" class="btn">Explore Our Land Projects</a>
+                    </div>
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Land conservation program">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="water">
+                <div class="program-content">
+                    <div class="program-text">
+                        <h3>Safeguarding Waters</h3>
+                        <p>Clean, abundant water is essential for all life. We work to protect freshwater ecosystems and ensure sustainable water supplies for people and nature.</p>
+                        <p>Our water programs focus on protecting watersheds, restoring rivers and wetlands, and promoting sustainable water use in agriculture and cities.</p>
+                        <p>We've helped conserve more than 5,000 miles of rivers and nearly 1 million acres of lakes and wetlands worldwide, while also improving water security for millions of people.</p>
+                        <a href="water-program.html" class="btn">Discover Our Water Initiatives</a>
+                    </div>
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Water protection program">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="cities">
+                <div class="program-content">
+                    <div class="program-text">
+                        <h3>Building Sustainable Cities</h3>
+                        <p>With more than half the world's population living in urban areas, cities play a crucial role in conservation. We work to integrate nature into urban planning and design.</p>
+                        <p>Our urban conservation initiatives include creating green spaces, protecting urban watersheds, promoting green infrastructure, and connecting city dwellers with nature.</p>
+                        <p>From rooftop gardens in New York to urban wetlands in China, we're helping make cities more livable and sustainable for people and wildlife alike.</p>
+                        <a href="cities-program.html" class="btn">See Our Urban Projects</a>
+                    </div>
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Sustainable cities program">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News/Blog Section -->
+    <section class="news section-padding">
+        <div class="container">
+            <h2 class="section-title">Latest Stories</h2>
+            <p class="section-subtitle">Discover inspiring stories of conservation in action from around the world.</p>
+            <div class="news-articles">
+                <div class="article-card" data-article="article1">
+                    <img src="https://images.unsplash.com/photo-1470114716159-e389f8712fda?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Wildlife conservation">
+                    <div class="article-content">
+                        <p class="article-date">June 15, 2023</p>
+                        <h3>Protecting Wildlife Corridors for a Healthier Planet</h3>
+                        <p>How connecting habitats helps species adapt to climate change and maintains biodiversity in threatened ecosystems worldwide.</p>
+                        <a href="#" class="read-more">Read Article</a>
+                        <div class="article-tags">
+                            <span class="article-tag">Wildlife</span>
+                            <span class="article-tag">Conservation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="article-card" data-article="article2">
+                    <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Urban nature">
+                    <div class="article-content">
+                        <p class="article-date">May 28, 2023</p>
+                        <h3>Bringing Nature Back to Cities</h3>
+                        <p>Urban conservation projects that are making cities greener, more resilient, and more livable for millions of residents.</p>
+                        <a href="#" class="read-more">Read Article</a>
+                        <div class="article-tags">
+                            <span class="article-tag">Urban</span>
+                            <span class="article-tag">Sustainability</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="article-card" data-article="article3">
+                    <img src="https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Forest restoration">
+                    <div class="article-content">
+                        <p class="article-date">April 10, 2023</p>
+                        <h3>Restoring Forests After Wildfires</h3>
+                        <p>Innovative approaches to helping forests recover from increasing wildfire damage while preparing for future climate impacts.</p>
+                        <a href="#" class="read-more">Read Article</a>
+                        <div class="article-tags">
+                            <span class="article-tag">Forests</span>
+                            <span class="article-tag">Restoration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="stories.html" class="btn">View All Stories</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section-padding">
+        <div class="container">
+            <h2 class="section-title">Voices of Conservation</h2>
+            <p class="section-subtitle">Hear from the people who make our work possible</p>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial active">
+                    <p class="testimonial-text">The Nature Conservancy's science-based approach and collaborative spirit have been instrumental in helping our community protect vital watersheds while supporting sustainable development.</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Maria Gonzalez" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Maria Gonzalez</h4>
+                            <p>Community Leader, Costa Rica</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <p class="testimonial-text">As a long-time supporter, I've seen firsthand how The Nature Conservancy turns conservation science into real, on-the-ground results that benefit both nature and people.</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="James Wilson" class="author-avatar">
+                        <div class="author-info">
+                            <h4>James Wilson</h4>
+                            <p>Conservation Donor Since 1998</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <p class="testimonial-text">Partnering with The Nature Conservancy has allowed our company to implement sustainable practices that reduce our environmental impact while improving our bottom line.</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Chen" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Sarah Chen</h4>
+                            <p>CEO, GreenTech Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-nav">
+                    <div class="testimonial-dot active" data-slide="0"></div>
+                    <div class="testimonial-dot" data-slide="1"></div>
+                    <div class="testimonial-dot" data-slide="2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners">
+        <div class="container">
+            <h2 class="section-title">Our Partners</h2>
+            <p class="section-subtitle">Collaboration is at the heart of our success</p>
+            
+            <div class="partner-logos">
+                <img src="https://www.nature.org/content/dam/tnc/nature/en/logos/partner-logo-wwf.png" alt="WWF" class="partner-logo">
+                <img src="https://www.nature.org/content/dam/tnc/nature/en/logos/partner-logo-un.png" alt="United Nations" class="partner-logo">
+                <img src="https://www.nature.org/content/dam/tnc/nature/en/logos/partner-logo-coca-cola.png" alt="Coca-Cola" class="partner-logo">
+                <img src="https://www.nature.org/content/dam/tnc/nature/en/logos/partner-logo-google.png" alt="Google" class="partner-logo">
+                <img src="https://www.nature.org/content/dam/tnc/nature/en/logos/partner-logo-usaid.png" alt="USAID" class="partner-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation CTA -->
+    <section class="donation-cta section-padding">
+        <div class="container">
+            <h2>Your Support Makes Our Work Possible</h2>
+            <p>Every donation helps us protect nature and build a future where people and the planet prosper together. Join more than 1 million members who are helping to conserve the lands and waters on which all life depends.</p>
+            <a href="donate.html" class="btn">Donate Now</a>
+            
+            <div class="donation-options">
+                <div class="donation-option active">$25</div>
+                <div class="donation-option">$50</div>
+                <div class="donation-option">$100</div>
+                <div class="donation-option">$250</div>
+                <div class="donation-option">Other Amount</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Stay Connected</h2>
+            <p>Subscribe to our newsletter to receive updates on our work, conservation tips, and ways to get involved.</p>
+            
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <ul>
+                        <li><a href="about.html">Our Mission</a></li>
+                        <li><a href="history.html">Our History</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="financials.html">Financial Information</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Work</h3>
+                    <ul>
+                        <li><a href="climate-change.html">Climate Change</a></li>
+                        <li><a href="land-conservation.html">Land Conservation</a></li>
+                        <li><a href="water-protection.html">Water Protection</a></li>
+                        <li><a href="sustainable-cities.html">Sustainable Cities</a></li>
+                        <li><a href="science-innovation.html">Science & Innovation</a></li>
+                        <li><a href="global-programs.html">Global Programs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Get Involved</h3>
+                    <ul>
+                        <li><a href="donate.html">Ways to Give</a></li>
+                        <li><a href="volunteer.html">Volunteer</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="membership.html">Membership</a></li>
+                        <li><a href="advocacy.html">Advocacy</a></li>
+                        <li><a href="corporate-partnerships.html">Corporate Partnerships</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="newsroom.html">Newsroom</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="education.html">Education Resources</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="glossary.html">Glossary</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <p>Follow us on social media for the latest updates and conservation stories.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <p style="margin-top: 20px;">Subscribe to our newsletter</p>
+                    <form style="margin-top: 10px;">
+                        <input type="email" placeholder="Your email" style="padding: 10px; width: 100%; border-radius: 4px; border: none;">
+                        <button type="submit" class="btn" style="margin-top: 10px; width: 100%;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 The Nature Conservancy. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a> | <a href="accessibility.html">Accessibility</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Article Modals -->
+    <div class="modal" id="articleModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="" alt="" id="modalImage">
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-date" id="modalDate"></p>
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <div class="modal-text" id="modalText"></div>
+            </div>
+            <div class="modal-footer">
+                <div class="modal-tags" id="modalTags"></div>
+                <div class="modal-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Page Content (hidden by default) -->
+    <div id="aboutPage" style="display: none;">
+        <section class="page-header">
+            <div class="container">
+                <h1>About Us</h1>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <a href="about.html">About Us</a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="about-content">
+            <div class="container">
+                <h2>Our Story</h2>
+                <p>Founded in 1951, The Nature Conservancy is a global environmental nonprofit working to create a world where people and nature thrive. What began as a small group of dedicated scientists and conservationists in the United States has grown into one of the most effective and wide-reaching environmental organizations in the world.</p>
+                
+                <p>Our journey started with the purchase of a single 60-acre parcel of land along the Mianus River Gorge in New York. This first project established our approach of using science to identify important natural areas and then taking direct action to protect them. Today, we operate in 79 countries and territories, employing more than 400 scientists and managing over 100 million acres of protected lands worldwide.</p>
+                
+                <h2>Our Mission</h2>
+                <p>We conserve the lands and waters on which all life depends. Our vision is a world where the diversity of life thrives, and people act to conserve nature for its own sake and its ability to fulfill our needs and enrich our lives.</p>
+                
+                <p>We achieve this through the dedicated efforts of our diverse staff, including more than 400 scientists, located in all 50 U.S. states and more than 35 countries across the world; with the help of our many partners, from individuals and governments to local nonprofits and corporations; and by using a non-confrontational, collaborative approach and staying true to our five unique core values.</p>
+                
+                <h2>Our Approach</h2>
+                <p>The Nature Conservancy takes a science-based approach to conservation. We use the best available science to identify the most important lands and waters to protect, then develop innovative, practical solutions to the most pressing conservation challenges at scales that matter.</p>
+                
+                <p>Our work is guided by five core values:</p>
+                <ul>
+                    <li><strong>Integrity Beyond Reproach</strong> - We are committed to the highest standards of ethical behavior and accountability.</li>
+                    <li><strong>Respect for People, Communities, and Cultures</strong> - We recognize and honor the fundamental value and dignity of all individuals.</li>
+                    <li><strong>Commitment to Diversity</strong> - We are committed to a globally diverse and culturally competent workforce.</li>
+                    <li><strong>One Conservancy</strong> - We work together as one organization, leveraging our collective strengths.</li>
+                    <li><strong>Tangible, Lasting Results</strong> - We use a non-confrontational, collaborative approach and focus on measurable outcomes.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="team-section">
+            <div class="container">
+                <h2 class="section-title">Our Leadership</h2>
+                <p class="section-subtitle">Meet the dedicated team guiding our global conservation efforts</p>
+                
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Jennifer Morris">
+                        <div class="team-info">
+                            <h3>Jennifer Morris</h3>
+                            <p>Chief Executive Officer</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Bill Ulfelder">
+                        <div class="team-info">
+                            <h3>Bill Ulfelder</h3>
+                            <p>Executive Director, North America</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sally Jewell">
+                        <div class="team-info">
+                            <h3>Sally Jewell</h3>
+                            <p>Board Chair</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Sanjayan">
+                        <div class="team-info">
+                            <h3>Sanjayan</h3>
+                            <p>Chief Scientist</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="timeline">
+            <div class="container">
+                <h2 class="section-title">Our History</h2>
+                <p class="section-subtitle">Key milestones in our conservation journey</p>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1951</div>
+                        <h3 class="timeline-title">The Beginning</h3>
+                        <p>The Nature Conservancy is founded as a small nonprofit organization with the purchase of a 60-acre parcel along the Mianus River Gorge in New York.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1965</div>
+                        <h3 class="timeline-title">First International Project</h3>
+                        <p>We expand beyond U.S. borders with our first international project in Canada, protecting the Niagara Escarpment in Ontario.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1988</div>
+                        <h3 class="timeline-title">Debt-for-Nature Swap</h3>
+                        <p>We pioneer the debt-for-nature swap concept, converting foreign debt into conservation funding in Bolivia, setting a model for future international conservation finance.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2000</div>
+                        <h3 class="timeline-title">Global Expansion</h3>
+                        <p>The Conservancy launches major initiatives in Asia and the Pacific, establishing programs in China, Indonesia, and Micronesia.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2015</div>
+                        <h3 class="timeline-title">Climate Change Focus</h3>
+                        <p>We announce a major commitment to address climate change through natural solutions, pledging to protect and restore forests, wetlands, and grasslands that store carbon.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2020</div>
+                        <h3 class="timeline-title">30x30 Initiative</h3>
+                        <p>The Conservancy joins the global movement to protect 30% of the planet's land and water by 2030 to address biodiversity loss and climate change.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Privacy Policy Page Content (hidden by default) -->
+    <div id="privacyPage" style="display: none;">
+        <section class="page-header">
+            <div class="container">
+                <h1>Privacy Policy</h1>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <a href="privacy.html">Privacy Policy</a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="privacy-content">
+            <div class="container">
+                <h2>Our Commitment to Privacy</h2>
+                <p>The Nature Conservancy ("we," "us," or "our") respects your privacy and is committed to protecting it through our compliance with this policy. This Privacy Policy describes the types of information we may collect from you or that you may provide when you visit our website (our "Website") and our practices for collecting, using, maintaining, protecting, and disclosing that information.</p>
+                
+                <p>This policy applies to information we collect on this Website, in email, text, and other electronic messages between you and this Website, and through mobile and desktop applications you download from this Website. It does not apply to information collected by us offline or through any other means, including on any other website operated by any third party.</p>
+                
+                <h3>Information We Collect About You</h3>
+                <p>We collect several types of information from and about users of our Website, including:</p>
+                <ul>
+                    <li><strong>Personal Information:</strong> Information by which you may be personally identified, such as name, postal address, email address, telephone number, or any other identifier by which you may be contacted online or offline ("personal information").</li>
+                    <li><strong>Non-Personal Information:</strong> Information about your internet connection, the equipment you use to access our Website, and usage details.</li>
+                    <li><strong>Donation Information:</strong> If you make a donation, we collect information necessary to process your donation, which may include your payment information.</li>
+                </ul>
+                
+                <h3>How We Use Your Information</h3>
+                <p>We use information that we collect about you or that you provide to us, including any personal information:</p>
+                <ul>
+                    <li>To present our Website and its contents to you.</li>
+                    <li>To provide you with information, products, or services that you request from us.</li>
+                    <li>To process your donations and send you receipts.</li>
+                    <li>To notify you about changes to our Website or any products or services we offer or provide through it.</li>
+                    <li>To allow you to participate in interactive features on our Website.</li>
+                    <li>For any other purpose with your consent.</li>
+                </ul>
+                
+                <h3>Disclosure of Your Information</h3>
+                <p>We may disclose aggregated information about our users, and information that does not identify any individual, without restriction. We may disclose personal information that we collect or you provide as described in this privacy policy:</p>
+                <ul>
+                    <li>To our subsidiaries and affiliates.</li>
+                    <li>To contractors, service providers, and other third parties we use to support our organization.</li>
+                    <li>To fulfill the purpose for which you provide it.</li>
+                    <li>For any other purpose disclosed by us when you provide the information.</li>
+                    <li>With your consent.</li>
+                </ul>
+                
+                <h3>Data Security</h3>
+                <p>We have implemented measures designed to secure your personal information from accidental loss and from unauthorized access, use, alteration, and disclosure. All information you provide to us is stored on secure servers behind firewalls. Any payment transactions will be encrypted using SSL technology.</p>
+                
+                <p>The safety and security of your information also depends on you. Where we have given you (or where you have chosen) a password for access to certain parts of our Website, you are responsible for keeping this password confidential.</p>
+                
+                <h3>Changes to Our Privacy Policy</h3>
+                <p>It is our policy to post any changes we make to our privacy policy on this page. If we make material changes to how we treat our users' personal information, we will notify you through a notice on the Website home page. The date the privacy policy was last revised is identified at the top of the page.</p>
+                
+                <h3>Contact Information</h3>
+                <p>To ask questions or comment about this privacy policy and our privacy practices, contact us at:</p>
+                <p>
+                    The Nature Conservancy<br>
+                    Attn: Privacy Officer<br>
+                    4245 North Fairfax Drive, Suite 100<br>
+                    Arlington, VA 22203-1606<br>
+                    Email: privacy@tnc.org<br>
+                    Phone: 1-800-628-6860
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                if(this.getAttribute('href') === '#') return;
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Animation on Scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.mission-image, .impact-card, .article-card, .program-image, .team-member, .timeline-item');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if(elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for animated elements
+        document.querySelectorAll('.mission-image, .impact-card, .article-card, .program-image, .team-member, .timeline-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+        
+        // Sticky Header
+        const header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+        
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            backToTopBtn.classList.toggle('active', window.scrollY > 300);
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Stats Counter Animation
+        const animateCounters = () => {
+            const landCounter = document.getElementById('landCounter');
+            const riverCounter = document.getElementById('riverCounter');
+            const countryCounter = document.getElementById('countryCounter');
+            const memberCounter = document.getElementById('memberCounter');
+            
+            const statsSection = document.querySelector('.stats');
+            const statsPosition = statsSection.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.5;
+            
+            if(statsPosition < screenPosition && landCounter.textContent === '0') {
+                animateCounter(landCounter, 0, 125, 2000);
+                animateCounter(riverCounter, 0, 5000, 2000);
+                animateCounter(countryCounter, 0, 79, 2000);
+                animateCounter(memberCounter, 0, 1000, 2000);
+            }
+        };
+        
+        const animateCounter = (element, start, end, duration) => {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                element.textContent = Math.floor(progress * (end - start) + start).toLocaleString();
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        };
+        
+        window.addEventListener('scroll', animateCounters);
+        
+        // Program Tabs
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabId = btn.getAttribute('data-tab');
+                
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                btn.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Testimonial Slider
+        const testimonials = document.querySelectorAll('.testimonial');
+        const testimonialDots = document.querySelectorAll('.testimonial-dot');
+        let currentTestimonial = 0;
+        
+        function showTestimonial(index) {
+            testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+            testimonialDots.forEach(dot => dot.classList.remove('active'));
+            
+            testimonials[index].classList.add('active');
+            testimonialDots[index].classList.add('active');
+            currentTestimonial = index;
+        }
+        
+        testimonialDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showTestimonial(index);
+            });
+        });
+        
+        // Auto-rotate testimonials
+        setInterval(() => {
+            let nextTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(nextTestimonial);
+        }, 5000);
+        
+        // Article Modal
+        const articleCards = document.querySelectorAll('.article-card');
+        const articleModal = document.getElementById('articleModal');
+        const closeModal = document.getElementById('closeModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalDate = document.getElementById('modalDate');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalText = document.getElementById('modalText');
+        const modalTags = document.getElementById('modalTags');
+        
+        // Sample article data (in a real site, this would come from a database)
+        const articles = {
+            article1: {
+                image: 'https://images.unsplash.com/photo-1470114716159-e389f8712fda?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+                date: 'June 15, 2023',
+                title: 'Protecting Wildlife Corridors for a Healthier Planet',
+                content: `
+                    <p>Wildlife corridors are essential pathways that connect fragmented habitats, allowing animals to move between areas to find food, mates, and suitable climates. As human development continues to expand, these corridors become increasingly vital for maintaining biodiversity and helping species adapt to climate change.</p>
+                    
+                    <div class="modal-image">
+                        <img src="https://images.unsplash.com/photo-1550353127-b0da3aeaa0ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Wildlife corridor">
+                        <figcaption>A wildlife overpass helps animals safely cross a busy highway</figcaption>
+                    </div>
+                    
+                    <p>At The Nature Conservancy, we're working to identify and protect critical wildlife corridors around the world. Our scientists use advanced mapping technologies and animal movement data to pinpoint the most important pathways for species ranging from jaguars in South America to pronghorn antelope in the American West.</p>
+                    
+                    <p>One of our most successful projects has been the creation of the Path of the Pronghorn migration corridor in Wyoming. By working with landowners, government agencies, and local communities, we've protected a 150-mile migratory route used by pronghorn for over 6,000 years. This corridor is now safeguarded through conservation easements and highway underpasses that allow safe passage.</p>
+                    
+                    <p>The benefits of wildlife corridors extend beyond conservation. These connected landscapes also provide clean water, carbon storage, and recreational opportunities for people. Our research shows that protecting just 30% of key connectivity areas could preserve habitat for over 90% of mammal species in North America.</p>
+                    
+                    <p>Looking ahead, we're expanding our corridor conservation work to address climate change. As temperatures rise, many species will need to move to cooler areas. Our scientists are modeling future climate conditions to identify where wildlife will need to migrate and working to protect those pathways now.</p>
+                `,
+                tags: ['Wildlife', 'Conservation', 'Climate Change']
+            },
+            article2: {
+                image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+                date: 'May 28, 2023',
+                title: 'Bringing Nature Back to Cities',
+                content: `
+                    <p>Urban areas are home to more than half the world's population, and that number is growing. As cities expand, they often displace natural habitats. But a new movement is proving that cities can be part of the conservation solution by integrating nature into urban planning and design.</p>
+                    
+                    <div class="modal-image">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Urban park">
+                        <figcaption>A green rooftop in downtown Chicago helps reduce urban heat</figcaption>
+                    </div>
+                    
+                    <p>The Nature Conservancy's Urban Conservation program works with city planners, architects, and community groups to create "green infrastructure" that benefits both people and wildlife. From rooftop gardens to urban wetlands, these projects provide habitat while also cooling cities, improving air quality, and managing stormwater.</p>
+                    
+                    <p>In New York City, we've helped install over 100 green roofs on schools and other buildings. These living roofs absorb rainwater, reduce energy costs, and provide habitat for pollinators. Our research shows they can reduce rooftop temperatures by up to 30°F compared to conventional roofs.</p>
+                    
+                    <p>Another innovative project is happening in Beijing, where we're working with partners to create an "urban forest network." By connecting parks, greenways, and street trees, we're helping migratory birds navigate the city while also giving residents much-needed access to nature.</p>
+                    
+                    <p>The benefits of urban conservation are clear. Studies show that access to green spaces improves mental health, reduces stress, and even boosts academic performance in children. As cities continue to grow, integrating nature into urban design will be essential for creating livable, sustainable communities.</p>
+                `,
+                tags: ['Urban', 'Sustainability', 'Community']
+            },
+            article3: {
+                image: 'https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+                date: 'April 10, 2023',
+                title: 'Restoring Forests After Wildfires',
+                content: `
+                    <p>Wildfires are a natural part of many ecosystems, but climate change and human activities are making them more frequent and severe. In the aftermath of devastating fires, The Nature Conservancy is pioneering innovative approaches to help forests recover while preparing them for future climate impacts.</p>
+                    
+                    <div class="modal-image">
+                        <img src="https://images.unsplash.com/photo-1516054575922-f0b8eeadec1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Forest restoration">
+                        <figcaption>Volunteers plant seedlings in a burned forest area</figcaption>
+                    </div>
+                    
+                    <p>Our post-fire restoration work begins with science. Before planting a single tree, our ecologists assess which areas will recover naturally and which need human intervention. This "right tree, right place" approach ensures we focus efforts where they'll have the most impact.</p>
+                    
+                    <p>In California, we're testing new techniques like "assisted migration"—planting tree species from slightly warmer climates that may be better adapted to future conditions. We're also working with indigenous communities to incorporate traditional fire management practices that reduce future wildfire risk.</p>
+                    
+                    <p>One of our most promising innovations is the use of drones for reforestation. In Montana, we've partnered with a tech startup to deploy drone fleets that can plant up to 40,000 seeds per day in hard-to-reach burned areas. These drones also collect data to monitor seedling survival and growth.</p>
+                    
+                    <p>Restoring forests after fires isn't just about trees. Healthy forests provide clean water, wildlife habitat, and carbon storage. They also support local economies through recreation and timber. Our work ensures these benefits continue for generations to come, even as the climate changes.</p>
+                `,
+                tags: ['Forests', 'Restoration', 'Climate Change']
+            }
+        };
+        
+        articleCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const articleId = card.getAttribute('data-article');
+                const article = articles[articleId];
+                
+                modalImage.src = article.image;
+                modalImage.alt = article.title;
+                modalDate.textContent = article.date;
+                modalTitle.textContent = article.title;
+                modalText.innerHTML = article.content;
+                
+                // Clear previous tags
+                modalTags.innerHTML = '';
+                
+                // Add new tags
+                article.tags.forEach(tag => {
+                    const tagElement = document.createElement('span');
+                    tagElement.className = 'article-tag';
+                    tagElement.textContent = tag;
+                    modalTags.appendChild(tagElement);
+                });
+                
+                articleModal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        closeModal.addEventListener('click', () => {
+            articleModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+        
+        window.addEventListener('click', (e) => {
+            if(e.target === articleModal) {
+                articleModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Donation Options
+        const donationOptions = document.querySelectorAll('.donation-option');
+        donationOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                donationOptions.forEach(opt => opt.classList.remove('active'));
+                option.classList.add('active');
+            });
+        });
+        
+        // Simulate page navigation (for demo purposes)
+        function showPage(pageId) {
+            document.getElementById('mainContent').style.display = 'none';
+            document.getElementById('aboutPage').style.display = 'none';
+            document.getElementById('privacyPage').style.display = 'none';
+            
+            if(pageId) {
+                document.getElementById(pageId).style.display = 'block';
+                window.scrollTo(0, 0);
+            } else {
+                document.getElementById('mainContent').style.display = 'block';
+            }
+        }
+        
+        // Check URL hash on load
+        window.addEventListener('load', () => {
+            if(window.location.hash === '#about') {
+                showPage('aboutPage');
+            } else if(window.location.hash === '#privacy') {
+                showPage('privacyPage');
+            }
+        });
+    </script>
+</body>
+</html>
